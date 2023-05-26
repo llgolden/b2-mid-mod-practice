@@ -2,7 +2,7 @@
 
 <% @departments.each do |department| %>
   <div id="dept-<%= department.id %>">
-    <h3><%= department.name %><%= department.floor %></h3>
+    <h3><%= department.name %> - floor <%= department.floor %></h3>
     <% department.employees.each do |employee| %>
       <%= employee.name %>
     <% end %>

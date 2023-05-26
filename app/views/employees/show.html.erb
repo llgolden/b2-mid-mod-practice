@@ -1,13 +1,21 @@
 <h1>Show Employee</h1>
   <p>Employee Name: <%= @employee.name %></p>
-  <p>Department: <%= @employee.department %></p>
-  <p>Why you? <%= @application.description %></p>
-<br>
-<br>
-<h3>Tickets:</h3>
+  <p>Department: <%= @employee.department.name %></p>
 
-@employee.tickets.sort_by(&:age).reverse
-^
-<% @employee.tickets.each do |emp_ticket| %>
-  <%= emp_ticket.subject %>
+<h3>Tickets:</h3>
+<% @emp_ticks.each do |tick| %>
+  <%= tick.subject %>
+  <br>
+  <% end %>
+
+<div id="oldest_tick">
+<p><b>Oldest Ticket: </b><%= @emp_ticks.first.subject %></p>
+</div>
+
+<%= form_with url: "/employees/#{@employee.id}", method: :post, local: true do |form| %>
+  <%= form.label :ticket %>
+  <%= form.text_field :ticket %>
+  
+  <%= form.submit "Submit" %>
 <% end %>
+
