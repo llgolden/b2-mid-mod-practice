@@ -12,8 +12,6 @@ RSpec.describe "the Department index page" do
 
     visit "/departments"
     
-save_and_open_page
-    
     within "#dept-#{department1.id}" do
       expect(page).to have_content(department1.name)
       expect(page).to have_content(department1.floor)
@@ -21,8 +19,8 @@ save_and_open_page
       expect(page).to have_content(employee2.name)
       expect(page).to_not have_content(department2.name)
       expect(page).to_not have_content(department2.floor)
-      # expect(page).to_not have_content(employee3.name)
-      # expect(page).to_not have_content(employee4.name)
+      expect(page).to_not have_content(employee3.name)
+      expect(page).to_not have_content(employee4.name)
     end
 
     within "#dept-#{department2.id}" do
@@ -32,8 +30,8 @@ save_and_open_page
       expect(page).to have_content(employee4.name)
       expect(page).to_not have_content(department1.name)
       expect(page).to_not have_content(department1.floor)
-      # expect(page).to_not have_content(employee1.name)
-      # expect(page).to_not have_content(employee2.name)
+      expect(page).to_not have_content(employee1.name)
+      expect(page).to_not have_content(employee2.name)
     end
 save_and_open_page
 
