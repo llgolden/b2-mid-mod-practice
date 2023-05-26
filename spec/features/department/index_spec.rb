@@ -24,7 +24,6 @@ save_and_open_page
       # expect(page).to_not have_content(employee3.name)
       # expect(page).to_not have_content(employee4.name)
     end
-save_and_open_page
 
     within "#dept-#{department2.id}" do
       expect(page).to have_content(department2.name)
