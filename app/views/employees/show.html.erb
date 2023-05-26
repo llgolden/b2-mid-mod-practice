@@ -1,0 +1,13 @@
+<h1>Show Employee</h1>
+  <p>Employee Name: <%= @employee.name %></p>
+  <p>Department: <%= @employee.department %></p>
+  <p>Why you? <%= @application.description %></p>
+<br>
+<br>
+<h3>Tickets:</h3>
+
+@employee.tickets.sort_by(&:age).reverse
+^
+<% @employee.tickets.each do |emp_ticket| %>
+  <%= emp_ticket.subject %>
+<% end %>

@@ -11,7 +11,7 @@ RSpec.describe "the Department index page" do
     employee4 = department2.employees.create!(name: "Jana", level: 2)
 
     visit "/departments"
-    
+
     within "#dept-#{department1.id}" do
       expect(page).to have_content(department1.name)
       expect(page).to have_content(department1.floor)
@@ -33,7 +33,5 @@ RSpec.describe "the Department index page" do
       expect(page).to_not have_content(employee1.name)
       expect(page).to_not have_content(employee2.name)
     end
-save_and_open_page
-
   end
 end
